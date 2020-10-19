@@ -1,0 +1,538 @@
+*,
+body,
+div {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 2.4vh;
+}
+.topDiv {
+  display: flex;
+  justify-content: space-between;
+}
+.showScore:hover {
+  color: red;
+}
+.rules:hover {
+  color: red;
+}
+body {
+  background-color: #dddddd;
+}
+div {
+  background-color: whitesmoke;
+}
+h1 {
+  background-color: whitesmoke;
+}
+ul {
+  list-style: none;
+}
+li {
+  height: 4vh;
+}
+.fa-heart {
+  color: red;
+}
+.equipmentImg {
+  max-width: 100%;
+  max-height: 100%;
+}
+.equipmentImgEmpty {
+  pointer-events: none;
+  max-width: 100%;
+  max-height: 100%;
+}
+.equipmentImgRiNe {
+  max-width: 6vh;
+  max-height: 3vw;
+}
+.equipmentImgBelt {
+  max-width: 6vw;
+  max-height: 6vh;
+}
+.choosePath {
+  margin-top: 3vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  font-weight: bold;
+}
+
+.gameBoard {
+  position: absolute;
+  top: auto;
+  left: 10vw;
+  float: left;
+  height: 80vh;
+  width: 80vw;
+  border: 2px solid black;
+}
+
+.eventBoard {
+  float: left;
+  height: 66vh;
+  width: 60vw;
+  border: 2px solid black;
+}
+
+.eventText {
+  float: right;
+  height: 66vh;
+  width: 19vw;
+  border: 2px solid black;
+  background-image: url('./components/eventboard/img/Scrolls/scroll4.png');
+  background-size: 400%, 400%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.buttonLeft,
+.buttonForward,
+.buttonRight {
+  background-color: teal;
+  height: 13vh;
+  width: 6vw;
+  border: 2px solid black;
+}
+.continueButton {
+  background-color: teal;
+  height: 13vh;
+  width: 19vw;
+  border: 2px solid black;
+}
+.newGame {
+  z-index: 9999;
+  position: absolute;
+  top: 70vh;
+  left: 40vw;
+  background-color: white;
+  height: 13vh;
+  width: 19vw;
+  border: 2px solid black;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 13vh;
+  width: 19vw;
+  border: 2px solid black;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.bottomNav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  height: 13vh;
+  width: 60vw;
+  border: 2px solid black;
+}
+.combatButtons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 14vh;
+  width: 30vw;
+  border: 2px solid black;
+  background: rgba(0, 0, 0, 0);
+}
+.ItemsButton,
+.health,
+.exp,
+.slashButton,
+.smashButton,
+.stabButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 13vh;
+  width: 7vw;
+  border: 2px solid black;
+  background: rgba(0, 0, 0, 0);
+}
+@keyframes flash {
+  49% {
+    background-color: white;
+  }
+  50% {
+    background-color: red;
+  }
+}
+@keyframes death {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.deathScreen {
+  position: fixed;
+  z-index: 9000;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-image: url('./components/eventboard/img/Combat/YouDied.jpg');
+  background-size: contain;
+  background-position: center;
+  animation-name: death;
+  animation-duration: 7s;
+  animation-fill-mode: forwards;
+}
+.ItemsButtonFlashing {
+  animation-name: flash;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 13vh;
+  width: 7vw;
+  border: 2px solid black;
+}
+
+.attributes {
+  height: 13vh;
+  width: 7vw;
+  border: 2px solid black;
+}
+
+.strButton,
+.intButton,
+.dexButton {
+  width: 2vw;
+  height: 4vh;
+  float: right;
+}
+
+.modal-bg {
+  position: fixed;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-image: url('./components/eventboard/img/Scrolls/scroll4.png');
+  background-size: 100%, 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ItemsModal {
+  background-color: whitesmoke;
+  width: 70vw;
+  height: 80vh;
+  background: rgba(0, 0, 0, 0);
+}
+.victory {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0);
+  width: 40vw;
+  height: 64vh;
+}
+.ItemsModal img {
+  width: 50vw;
+  height: 80vh;
+}
+.combatprocess {
+  position: absolute;
+  left: 30vw;
+  top: 35vh;
+  width: 40vw;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  background: rgba(0, 0, 0, 0);
+}
+.combatHealth {
+  position: absolute;
+  left: 22vw;
+  top: 29vh;
+  background: rgba(0, 0, 0, 0);
+}
+.playerStr {
+  position: absolute;
+  left: 30vw;
+  top: 29vh;
+  background: rgba(0, 0, 0, 0);
+}
+.playerDex {
+  position: absolute;
+  left: 35vw;
+  top: 29vh;
+  background: rgba(0, 0, 0, 0);
+}
+.playerAP {
+  position: absolute;
+  left: 40vw;
+  top: 29vh;
+  background: rgba(0, 0, 0, 0);
+}
+.monsterCombatHealth {
+  position: absolute;
+  left: 73vw;
+  top: 29vh;
+  background: rgba(0, 0, 0, 0);
+}
+.monStr {
+  position: absolute;
+  top: 29vh;
+  left: 63vw;
+  background: rgba(0, 0, 0, 0);
+}
+.monDex {
+  position: absolute;
+  top: 29vh;
+  left: 68vw;
+  background: rgba(0, 0, 0, 0);
+}
+.HitBlood,
+.HitMiss,
+.HitNothing {
+  position: absolute;
+  left: 22vw;
+  top: 55vh;
+  width: 6vw;
+  height: 4vh;
+  background: rgba(0, 0, 0, 0);
+}
+.monHitBlood,
+.monHitMiss,
+.monHitNothing {
+  position: absolute;
+  left: 73vw;
+  top: 55vh;
+  width: 6vw;
+  height: 4vh;
+  background: rgba(0, 0, 0, 0);
+}
+.monSwordSlash,
+.monSwordOverhand,
+.monSwordStab,
+.monNoAttack {
+  position: absolute;
+  left: 73vw;
+  top: 35vh;
+  width: 4vw;
+  height: 13vh;
+  background: rgba(0, 0, 0, 0);
+}
+.monSwordSlash {
+  background-image: url(./components/eventboard/img/Combat/Attack.gif);
+  transform: rotate(340deg);
+}
+.monSwordOverhand {
+  background-image: url(./components/eventboard/img/Combat/Attack.gif);
+  transform: rotate(10deg);
+}
+.monSwordStab {
+  background-image: url(./components/eventboard/img/Combat/Attack.gif);
+  transform: rotate(300deg);
+}
+.SwordSlash,
+.SwordOverhand,
+.SwordStab,
+.NoAttack {
+  position: absolute;
+  left: 22vw;
+  top: 35vh;
+  width: 4vw;
+  height: 13vh;
+  background: rgba(0, 0, 0, 0);
+}
+.SwordSlash {
+  background-image: url(./components/eventboard/img/Combat/Attack.gif);
+  transform: rotate(70deg);
+}
+.SwordOverhand {
+  background-image: url(./components/eventboard/img/Combat/Attack.gif);
+  transform: rotate(35deg);
+}
+.SwordStab {
+  background-image: url(./components/eventboard/img/Combat/Attack.gif);
+  transform: rotate(110deg);
+}
+
+.conItemButton {
+  height: 16vh;
+  width: 10vw;
+  font-size: x-large;
+  background-color: red;
+}
+.monsterAttack {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  background: rgba(0, 0, 0, 0);
+}
+.combatModal {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: whitesmoke;
+  width: 60vw;
+  height: 50vh;
+  background: rgba(0, 0, 0, 0);
+}
+.ItemsButton2 {
+  float: right;
+}
+
+.sixItemsInBackpack {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin-top: 10vh;
+  margin-right: 2.5vw;
+  border: 2px solid black;
+}
+.backpackItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 6vw;
+  border: 2px solid black;
+}
+.backpackItemred {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 6vw;
+  border: 2px solid red;
+}
+
+.tippyToolTip {
+  min-width: 14vw;
+  border: 2px solid blue;
+}
+
+.ring,
+.shield,
+.weapon,
+.armor,
+.necklace,
+.boots,
+.gloves,
+.belt,
+.helmet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+.ring {
+  position: absolute;
+  left: 21vw;
+  top: 31vh;
+  width: 3vw;
+  height: 6vh;
+}
+.weapon {
+  position: absolute;
+  left: 20vw;
+  top: 16vh;
+  width: 6vw;
+  height: 14vh;
+}
+.helmet {
+  position: absolute;
+  left: 37vw;
+  top: 16vh;
+  width: 6vw;
+  height: 10vh;
+}
+.shield {
+  position: absolute;
+  left: 55vw;
+  top: 16vh;
+  width: 6vw;
+  height: 14vh;
+}
+.gloves {
+  position: absolute;
+  left: 55vw;
+  top: 31vh;
+  width: 6vw;
+  height: 10vh;
+}
+.belt {
+  position: absolute;
+  left: 37vw;
+  top: 53vh;
+  width: 6vw;
+  height: 6vh;
+}
+.armor {
+  position: absolute;
+  left: 37vw;
+  top: 38vh;
+  width: 6vw;
+  height: 14vh;
+}
+.necklace {
+  position: absolute;
+  left: 38.5vw;
+  top: 30vh;
+  width: 3vw;
+  height: 6vh;
+}
+.boots {
+  position: absolute;
+  left: 37vw;
+  top: 78vh;
+  width: 6vw;
+  height: 10vh;
+}
+.totalAttributes {
+  position: absolute;
+  top: 74.5vh;
+  left: 15.3vw;
+  background-color: grey;
+  color: black;
+  width: 14vw;
+  height: 15vh;
+  border: 2px solid black;
+}
+
+.monsterCombatBoard,
+.combatBoard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 14vh;
+  width: 30vw;
+  border: 2px solid black;
+  background: rgba(0, 0, 0, 0);
+}
+.combatInfo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
